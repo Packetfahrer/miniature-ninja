@@ -10,7 +10,7 @@
 
 @class Contact, EditViewController, RootViewController;
 
-@interface DetailViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDataSource, UITableViewDelegate,  UITabBarControllerDelegate  > {
+@interface DetailViewController : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate,  UITabBarControllerDelegate  > {
 	
 	
 	IBOutlet UITableView *tableView;
@@ -19,7 +19,6 @@
 	EditViewController *evController;
 	RootViewController *rootController;
 	
-	//kc110609	UIImagePickerController *imagePickerView;
 }
 
 @property (nonatomic, retain) Contact *contactObj;

@@ -178,7 +178,7 @@
 		case 1: 	
 			return [comp3 count];
 			break;
-		case 2: 	
+		default: 	
 			return [comp1 count];
 			break;
 	}
@@ -194,7 +194,7 @@
 		case 1: 	
 			return 50; 
 			break;
-		case 2: 	
+		default: 	
 			return 100; 
 			break;
 	}
@@ -210,7 +210,7 @@
 		case 0: 	return [comp2 objectAtIndex:row]; break;
 		case 1: 	return [comp3 objectAtIndex:row]; break;
 			
-		case 2: 	return [comp1 objectAtIndex:row]; break;
+		default: 	return [comp1 objectAtIndex:row]; break;
 			
 	}	
 	
@@ -219,9 +219,18 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	switch(component)
 	{	
-		case 0: 	self.strMonth = [comp2 objectAtIndex:row]; [self displayDate];break;
-		case 1: 	self.strDay = [comp3 objectAtIndex:row];[self displayDate]; break;			
-		case 2: 	self.strYear = [comp1 objectAtIndex:row];[self displayDate];  break;			
+		case 0: 	
+            self.strMonth = [comp2 objectAtIndex:row]; 
+            [self displayDate];
+            break;
+		case 1: 	
+            self.strDay = [comp3 objectAtIndex:row];
+            [self displayDate];
+            break;			
+		default: 	
+            self.strYear = [comp1 objectAtIndex:row];
+            [self displayDate];  
+            break;			
 	}	
 }
 - (void)displayDate {
@@ -262,7 +271,6 @@
 											   initWithBarButtonSystemItem:UIBarButtonSystemItemSave 
 											   target:self action:@selector(save_Clicked:)] autorelease];	
 	
-//	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -273,7 +281,6 @@
 	[self initComp3];
 	
 	self.title = [self.keyOfTheFieldToEdit capitalizedString];
-//	if ([self.title isEqualToString:@"Calorie_Target"]) { self.title = @"Weight Target";}
 	
 	if (self.keyOfTheFieldToEdit == @"gender") {
 		lblField.text = self.editValue;
@@ -293,25 +300,7 @@
 		lblField.hidden = NO;
 		segField.hidden = NO;
 	}
-//kc v1.3	if (self.keyOfTheFieldToEdit == @"active_ind") {
-//kc v1.3		lblField.text = self.editValue;
-//kc v1.3		[segField removeSegmentAtIndex:0 animated:NO];
-//kc v1.3		[segField removeSegmentAtIndex:0 animated:NO];
-		
-//kc v1.3		[segField insertSegmentWithTitle:@"Y" atIndex:0 animated:NO];
-//kc v1.3		[segField insertSegmentWithTitle:@"N" atIndex:1 animated:NO];
-		
-//kc v1.3		if ([self.editValue isEqualToString:@"Yes"]){
-//kc v1.3			segField.selectedSegmentIndex = 0;
-//kc v1.3		}else {
-//kc v1.3			segField.selectedSegmentIndex = 1;
-//kc v1.3		}
-//kc v1.3		txtField.hidden = YES;
-//kc v1.3		txtField.enabled = NO;
-//kc v1.3		lblField.hidden = NO;
-//kc v1.3		segField.hidden = NO;			
-//kc v1.3	}
-	pvMeals.hidden = YES;
+	pvDOB.hidden = YES;
 	if (self.keyOfTheFieldToEdit == @"contactName") {	
 		txtField.placeholder = [self.keyOfTheFieldToEdit capitalizedString];
 		txtField.text = self.editValue;
@@ -321,51 +310,30 @@
 		txtField.keyboardType = UIKeyboardTypeDefault;
 		txtField.enabled = YES;
 	}
-	if (self.keyOfTheFieldToEdit == @"height") {	
-		txtField.placeholder = [self.keyOfTheFieldToEdit capitalizedString];
-		txtField.text = self.editValue;
-		lblField.hidden = YES;
-		segField.hidden = YES;
-		txtField.hidden = NO;
-		txtField.keyboardType = UIKeyboardTypeNumberPad;
-		txtField.enabled = YES;
-	}
-//kc v1.3	if (self.keyOfTheFieldToEdit == @"dob") {	
-//kc v1.3		txtField.placeholder = [self.keyOfTheFieldToEdit capitalizedString];
-//kc v1.3		txtField.text = self.editValue;
-//kc v1.3		lblField.hidden = YES;
-//kc v1.3		segField.hidden = YES;
-//kc v1.3		txtField.hidden = NO;
-//kc v1.3		txtField.keyboardType = UIKeyboardTypeDefault;
-//kc v1.3		txtField.enabled = YES;
-//kc v1.3	}
+
+    if (self.keyOfTheFieldToEdit == @"gender"){
+        //		lblField.placeholder = [self.keyOfTheFieldToEdit capitalizedString];
+        lblField.text = self.editValue;
+        txtField.hidden = YES;
+        lblField.hidden = NO;
+        segField.hidden = NO;
+    }
 	
-
-
-
-if (self.keyOfTheFieldToEdit == @"gender"){
- //		lblField.placeholder = [self.keyOfTheFieldToEdit capitalizedString];
- lblField.text = self.editValue;
- txtField.hidden = YES;
- lblField.hidden = NO;
- segField.hidden = NO;
-}
-	
-if (self.keyOfTheFieldToEdit == @"dob") {							//kc v1.3
-	//		txtField.placeholder = [self.keyOfTheFieldToEdit capitalizedString];	//kc v1.3
-	if ([editValue length] == 0){
-		lblField.text = nil;
-	} else {
-		lblField.text = self.editValue;										//kc v1.3
-	}
-	pvMeals.hidden = NO;
-	lblField.hidden = NO;	
-	txtField.hidden = YES;
-	segField.hidden = YES;													//kc v1.3
-	txtField.enabled = NO;		
-}else{
-	[txtField becomeFirstResponder];
-}
+    if (self.keyOfTheFieldToEdit == @"dob") {							//kc v1.3
+        //		txtField.placeholder = [self.keyOfTheFieldToEdit capitalizedString];	//kc v1.3
+        if ([editValue length] == 0){
+            lblField.text = nil;
+        } else {
+            lblField.text = self.editValue;										//kc v1.3
+        }
+        pvDOB.hidden = NO;
+        lblField.hidden = NO;	
+        txtField.hidden = YES;
+        segField.hidden = YES;													//kc v1.3
+        txtField.enabled = NO;		
+    }else{
+        [txtField becomeFirstResponder];
+    }
 
 	
 }
@@ -377,15 +345,7 @@ if (self.keyOfTheFieldToEdit == @"dob") {							//kc v1.3
 		}else{
 			lblField.text = @"Female";
 		}
-	}
-//kc v1.3	if (self.keyOfTheFieldToEdit == @"active_ind") {
-//kc v1.3		if (segField.selectedSegmentIndex == 0){
-//kc v1.3			lblField.text = @"Yes";
-//kc v1.3		}else{
-//kc v1.3			lblField.text = @"No";
-//kc v1.3		}
-//kc v1.3	}
-	
+	}	
 }
 
 
@@ -426,10 +386,7 @@ if (self.keyOfTheFieldToEdit == @"dob") {							//kc v1.3
 		[[NSUserDefaults standardUserDefaults] setObject:txtField.text forKey:@"defaultUser"];
 	} 
 	
-	if (self.keyOfTheFieldToEdit == @"height"){
-		[[NSUserDefaults standardUserDefaults] setObject:txtField.text forKey:@"calorieTarget"];
-	}
-	
+
 	//Pop back to the detail view.
 	[self.navigationController popViewControllerAnimated:YES];
 	

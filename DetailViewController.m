@@ -27,9 +27,6 @@
     [super viewDidLoad];
 	self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
-	//Configure the UIImagePickerController
-	//kc 110609	imagePickerView = [[UIImagePickerController alloc] init];
-	//kc 110609	imagePickerView.delegate = self;
 }
 
 
@@ -37,7 +34,7 @@
 	
 	[super viewWillAppear:animated];
 	self.title = contactObj.contactName;
-
+    
 	[tableView reloadData];
 }
 
@@ -59,8 +56,6 @@
 
 
 - (void)dealloc {
-	
-	//kc 110609	[imagePickerView release];
 	[evController release];
 	[selectedIndexPath release];
 	[tableView release];
@@ -69,7 +64,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tblView {
-    return 4;
+    return 3;
 }
 
 
@@ -82,7 +77,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 	tableView.backgroundColor = [UIColor clearColor];
 
@@ -91,16 +86,11 @@
 			cell.textLabel.text = contactObj.contactName;
 			break;
 		case 1:
-			cell.textLabel.text = @"Change Height";
-			if(contactObj.height != nil)
-				cell.textLabel.text = [NSString stringWithFormat:@"%@", contactObj.height];
-			break;
-		case 2:
 			cell.textLabel.text = @"Change Gender";
 			if(contactObj.gender != nil)
 				cell.textLabel.text = [NSString stringWithFormat:@"%@", contactObj.gender];
 			break;
-		case 3:
+		case 2:
 			cell.textLabel.text = @"Change Date of Birth";
 			if(contactObj.dob != nil)
 				cell.textLabel.text = [NSString stringWithFormat:@"%@", contactObj.dob];
@@ -117,14 +107,11 @@
 	switch (section) {
 		case 0:
 			sectionName = [NSString stringWithFormat:@"Name"];
-			break;
+			break;			
 		case 1:
-			sectionName = [NSString stringWithFormat:@"Height in Inches"];
-			break;
-		case 2:
 			sectionName = [NSString stringWithFormat:@"Gender"];
 			break;
-		case 3:
+		case 2:
 			sectionName = [NSString stringWithFormat:@"Date of Birth"];
 			break;
 }
@@ -164,18 +151,6 @@
 			[self.navigationController pushViewController:evController animated:YES];
 			break;
 		case 1:
-//kc v1.3			evController.keyOfTheFieldToEdit = @"dob";
-//kc v1.3			evController.editValue = contactObj.dob;
-			evController.keyOfTheFieldToEdit = @"height";		//kc v1.3
-			evController.editValue = contactObj.height;			//kc v1.3
-			
-			//Object being edited.
-			evController.objectToEdit = contactObj;
-			
-			//Push the edit view controller on top of the stack.
-			[self.navigationController pushViewController:evController animated:YES];
-			break;
-		case 2:
 			evController.keyOfTheFieldToEdit = @"gender";
 			evController.editValue = contactObj.gender;
 			//Object being edited.
@@ -184,7 +159,7 @@
 			//Push the edit view controller on top of the stack.
 			[self.navigationController pushViewController:evController animated:YES];
 			break;
-		case 3:
+		case 2:
 			evController.keyOfTheFieldToEdit = @"dob";
 			evController.editValue = contactObj.dob;
 			//Object being edited.
@@ -197,14 +172,4 @@
 	
 }
 
-
-/*kc110609
- 
- - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)dictionary {
- 
- contactObj.weight = image;
- [tableView reloadData];
- [picker dismissModalViewControllerAnimated:YES];
- }
- kc110609*/
 @end

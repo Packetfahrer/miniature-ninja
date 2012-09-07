@@ -270,7 +270,7 @@
 		case 1: 	
 			return [comp3 count];
 			break;
-		case 2: 	
+		default: 	
 			return [comp1 count];
 			break;
 	}
@@ -286,7 +286,7 @@
 		case 1: 	
 			return 50; 
 			break;
-		case 2: 	
+		default: 	
 			return 100; 
 			break;
 	}
@@ -302,7 +302,7 @@
 		case 0: 	return [comp2 objectAtIndex:row]; break;
 		case 1: 	return [comp3 objectAtIndex:row]; break;
 			
-		case 2: 	return [comp1 objectAtIndex:row]; break;
+		default: 	return [comp1 objectAtIndex:row]; break;
 				
 	}	
 
@@ -313,7 +313,7 @@
 	{	
 		case 0: 	self.strMonth = [comp2 objectAtIndex:row]; [self displayDate];break;
 		case 1: 	self.strDay = [comp3 objectAtIndex:row];[self displayDate]; break;			
-		case 2: 	self.strYear = [comp1 objectAtIndex:row];[self displayDate];  break;			
+		default: 	self.strYear = [comp1 objectAtIndex:row];[self displayDate];  break;			
 	}	
 }
 

@@ -22,9 +22,7 @@
 	//Intrnal variables to keep track of the state of the object.
 	BOOL isDirty;
 	BOOL isDetailViewHydrated;
-	
-	NSArray		*statusUpdates;
-	
+		
 }
 
 @property (nonatomic, readonly) NSInteger contactID;

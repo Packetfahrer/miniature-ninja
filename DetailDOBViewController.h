@@ -25,7 +25,7 @@
 	NSString *keyOfTheFieldToEdit;
 	NSString *editValue;
 	id objectToEdit;
-	ProofAppDelegate *appDelegate;
+	CustomerAppDelegate *appDelegate;
 	int autoInt;
 	
 	
@@ -44,6 +44,6 @@
 - (IBAction) save_Clicked:(id)sender;
 - (IBAction) cancel_Clicked:(id)sender;
 - (IBAction) changeSegType: (id) sender;
-
+- (void)displayDate;
 
 @end

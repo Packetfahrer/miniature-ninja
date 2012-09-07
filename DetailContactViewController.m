@@ -11,7 +11,7 @@
 #import "AddViewController.h"
 
 @implementation DetailContactViewController
-@synthesize objectToEdit, keyOfTheFieldToEdit, editValue, strChild, categoryID;
+@synthesize objectToEdit, keyOfTheFieldToEdit, editValue, strContact, categoryID;
 - (void)initComp1 {
 	comp1 = [[NSMutableArray alloc] init];
 	for (NSString *child_id in appDelegate.contactArray) {
@@ -29,12 +29,10 @@
 - (void)viewWillAppear:(BOOL)animated {
 	
 	[super viewWillAppear:YES];
-	appDelegate = (ProofAppDelegate *)[[UIApplication sharedApplication] delegate];
+	appDelegate = (CustomerAppDelegate *)[[UIApplication sharedApplication] delegate];
     
 	[self initComp1];
 	
-	NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-	NSString *strSelected = [user stringForKey:@"selected"];
 	self.title = @"Name";	
 	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] 
 											  initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
@@ -47,20 +45,18 @@
 	
 	
 	self.categoryID = @"REQUIRED";
-	txtField.hidden = NO;
     if ([appDelegate.contactArray count]  > 0){
-        pvMeals.hidden = NO;
-        [pvMeals becomeFirstResponder];
-        [pvMeals reloadAllComponents];   
+        pvContacts.hidden = NO;
+        [pvContacts becomeFirstResponder];
+        [pvContacts reloadAllComponents];   
         self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] 
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemSave 
                                                    target:self action:@selector(save_Clicked:)] autorelease];
-        Contact *childObj = [appDelegate.contactArray objectAtIndex:[pvMeals selectedRowInComponent:0]];
-        childInt =  childObj.contactID;
-        strChild =  childObj.contactName;
-        txtField.text = childObj.contactName;
+        Contact *childObj = [appDelegate.contactArray objectAtIndex:[pvContacts selectedRowInComponent:0]];
+        contactInt =  childObj.contactID;
+        strContact =  childObj.contactName;
     } else {
-        pvMeals.hidden = YES;        
+        pvContacts.hidden = YES;        
     }
 
 	
@@ -91,31 +87,9 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	Contact *childObj = [appDelegate.contactArray objectAtIndex:row];
-	childInt =  childObj.contactID;
-	strChild =  childObj.contactName;
-    txtField.text = childObj.contactName;
+	contactInt =  childObj.contactID;
+	strContact =  childObj.contactName;
 }
-
-- (IBAction) changeSegType: (id) sender
-{
-	if (self.keyOfTheFieldToEdit == @"gender") {
-		if (segField.selectedSegmentIndex == 0){
-			lblField.text = @"Male";
-		}else{
-			lblField.text = @"Female";
-		}
-	}
-	//kc v1.3	if (self.keyOfTheFieldToEdit == @"active_ind") {
-	//kc v1.3		if (segField.selectedSegmentIndex == 0){
-	//kc v1.3			lblField.text = @"Yes";
-	//kc v1.3		}else{
-	//kc v1.3			lblField.text = @"No";
-	//kc v1.3		}
-	//kc v1.3	}
-	
-}
-
-
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -132,8 +106,6 @@
 
 
 - (void)dealloc {
-	[txtField release];
-	[lblField release];
 	[editValue release];
 	[keyOfTheFieldToEdit release];
 	[objectToEdit release];
@@ -142,9 +114,8 @@
 
 - (IBAction) save_Clicked:(id)sender {
 	
-	self.categoryID = [NSString stringWithFormat:@"%d",childInt];
-	NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-	if (childInt == nil) {
+	self.categoryID = [NSString stringWithFormat:@"%d",contactInt];
+	if (self.categoryID  == nil) {
 		UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"Name has to be selected!" 
 														  message:@"Please select a Name before saving." 
 														 delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -152,11 +123,9 @@
 		[myAlert release];
 		
 	}else {
-		NSString *strSelected = [user stringForKey:@"selected"];
-		[[NSUserDefaults standardUserDefaults] setObject: [NSString stringWithFormat:self.categoryID] forKey:@"childint"];
 		[[NSUserDefaults standardUserDefaults] setObject: [NSString stringWithFormat:self.categoryID] forKey:@"contactid"];
 
-		[[NSUserDefaults standardUserDefaults] setObject: [NSString stringWithFormat:strChild] forKey:@"contactname"];
+		[[NSUserDefaults standardUserDefaults] setObject: [NSString stringWithFormat:strContact] forKey:@"contactname"];
 		
 		
 		
@@ -174,23 +143,7 @@
 	[self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction) addContact: (id) sender{
-    
-	[[NSUserDefaults standardUserDefaults] setObject:@"Required" forKey:@"dateofbirth"];	
-	
-	if(acController == nil)
-		acController = [[AddViewController alloc] initWithNibName:@"AddView" bundle:nil];
-	
-	if(addNavigationController == nil){
-		addNavigationController = [[UINavigationController alloc] initWithRootViewController:acController];
-	}else {
-		[addNavigationController release];
-		addNavigationController = [[UINavigationController alloc] initWithRootViewController:acController];
-		
-	}
-	
-	[self.navigationController presentModalViewController:addNavigationController animated:YES];
-}
+
 
 
 @end

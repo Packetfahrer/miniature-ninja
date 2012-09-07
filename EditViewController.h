@@ -24,7 +24,7 @@
 	NSString *strMonth;
 	NSString *strDay;
 	NSString *strYear;
-	IBOutlet UIPickerView *pvMeals;
+	IBOutlet UIPickerView *pvDOB;
 
 	
 }
@@ -36,6 +36,7 @@
 - (IBAction) save_Clicked:(id)sender;
 - (IBAction) cancel_Clicked:(id)sender;
 - (IBAction) changeSegType: (id) sender;
+- (void)displayDate;
 
 @property (nonatomic, retain) NSString *strMonth;
 @property (nonatomic, retain) NSString *strDay;

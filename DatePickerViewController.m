@@ -127,7 +127,6 @@ kcproof*/
     [df_local setDateFormat:@"yyyy.MM.dd HH:mm:ss a"];
     
     NSString* ts_utc_string = [df_utc stringFromDate:selected];
-    NSString* ts_local_string = [df_local stringFromDate:selected];
 
 //------------kc
 //kc    NSString *message = [[NSString alloc] initWithFormat:@"The date and time you selected is: %@", selected];
@@ -150,7 +149,8 @@ kc*/
     }else {
         [[NSUserDefaults standardUserDefaults] setObject:ts_utc_string forKey:@"dateofevent"];
     }
-    [self.navigationController dismissModalViewControllerAnimated:YES];
+//kc     [self.navigationController dismissModalViewControllerAnimated:YES];
+	[self.navigationController popViewControllerAnimated:YES];
 
 }
 

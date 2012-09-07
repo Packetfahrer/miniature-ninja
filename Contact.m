@@ -1,9 +1,9 @@
 //
 //  Contact.m
-//  PartyTwacker
+//  
 //
-//  Created by Kevin Collins on 11/29/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by Kevin Collins on 09/02/2012
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "Contact.h"
@@ -22,17 +22,13 @@ static sqlite3_stmt *updateStmt = nil;
 
 + (void) getInitialDataToDisplay:(NSString *)dbPath {
 	
-	ProofAppDelegate *appDelegate = (ProofAppDelegate *)[[UIApplication sharedApplication] delegate];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSString stringWithFormat:@"%@",@"kbc-appstore"] forKey:@"defaultUser"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSString stringWithFormat:@"No"] forKey:@"contactAdded"];
+	CustomerAppDelegate *appDelegate = (CustomerAppDelegate *)[[UIApplication sharedApplication] delegate];
+
 	if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
 		
-//kc v1.3		const char *sql = "select ID, Name, dob, weight, gender, active_ind, id as contactTrkId from social_contacts order by Name";
 		const char *sql = "select ID,case when Name ISNULL then ' ' else Name end Name, case when dob ISNULL then ' ' else dob end dob, case when height ISNULL then ' ' else height end height, case when gender ISNULL then ' ' else gender end gender, id as contactID from contact order by Name";
 		sqlite3_stmt *selectstmt;
-		NSString *bypassUserImage = @"";
-		NSUserDefaults *bypass = [NSUserDefaults standardUserDefaults];
-		bypassUserImage = [bypass stringForKey:@"bypassTwitterImage"];
+
 		if(sqlite3_prepare_v2(database, sql, -1, &selectstmt, NULL) == SQLITE_OK) {
 			
 			while(sqlite3_step(selectstmt) == SQLITE_ROW) {
@@ -42,16 +38,12 @@ static sqlite3_stmt *updateStmt = nil;
 				Contact *contactObj = [[Contact alloc] initWithPrimaryKey:primaryKey];
 				contactObj.contactName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(selectstmt, 1)];
 				contactObj.dob = [NSString stringWithUTF8String:(char *)sqlite3_column_text(selectstmt, 2)];
-//kc				int i = sqlite3_column_int(selectstmt, 3);
-//kc				contactObj.height = [NSString stringWithFormat:@"%d", i];
 				contactObj.height = [NSString stringWithUTF8String:(char *)sqlite3_column_text(selectstmt, 3)];
 
 				contactObj.gender = [NSString stringWithUTF8String:(char *)sqlite3_column_text(selectstmt, 4)];
 				int i = sqlite3_column_int(selectstmt, 5);
-				contactObj.contact_id =  [NSString stringWithFormat:@"%d", i];				//kc111009				NSLog(@"contactObj.contact_id: %@",contactObj.contact_id);
+				contactObj.contact_id =  [NSString stringWithFormat:@"%d", i];				//kc111009				
 				
-//kc v1.3 copied from jduff presence				NSDictionary *data = [TwitterHelper fetchInfoForUsername:self.username];
-//kc v1.3 copied from jduff presence				self.profileImageURL = [NSURL URLWithString:[data objectForKey:@"profile_image_url"]];
 				
 				contactObj.isDirty = NO;
 				[[NSUserDefaults standardUserDefaults] setObject: [NSString stringWithFormat:@"%@",contactObj.contactName] forKey:@"defaultUser"];
@@ -99,8 +91,6 @@ static sqlite3_stmt *updateStmt = nil;
 	if (SQLITE_DONE != sqlite3_step(deleteStmt)) 
 		NSAssert1(0, @"Error while deleting. '%s'", sqlite3_errmsg(database));
 	
-	[[NSUserDefaults standardUserDefaults] setObject: [NSString stringWithFormat:@"%@",@"kbc-appstore"] forKey:@"defaultUser"];
-
 	sqlite3_reset(deleteStmt);
 }
 
@@ -114,8 +104,7 @@ static sqlite3_stmt *updateStmt = nil;
 	
 	sqlite3_bind_text(addStmt, 1, [contactName UTF8String], -1, SQLITE_TRANSIENT);
 	sqlite3_bind_text(addStmt, 2, [dob UTF8String], -1, SQLITE_TRANSIENT);
-//kc	int i =[height intValue];  
-//kc	sqlite3_bind_int(addStmt, 3, i);  
+
 	sqlite3_bind_text(addStmt, 3, [height UTF8String], -1, SQLITE_TRANSIENT);
 
 	sqlite3_bind_text(addStmt, 4, [gender UTF8String], -1, SQLITE_TRANSIENT);
@@ -172,8 +161,7 @@ static sqlite3_stmt *updateStmt = nil;
 		
 		sqlite3_bind_text(updateStmt, 1, [contactName UTF8String], -1, SQLITE_TRANSIENT);
 		sqlite3_bind_text(updateStmt, 2, [dob UTF8String], -1, SQLITE_TRANSIENT);
-//kc		int i =[height intValue];  
-//kc		sqlite3_bind_int(updateStmt, 3, i);  
+
 		sqlite3_bind_text(updateStmt, 3, [height UTF8String], -1, SQLITE_TRANSIENT);
 
 		sqlite3_bind_text(updateStmt, 4, [gender UTF8String], -1, SQLITE_TRANSIENT);

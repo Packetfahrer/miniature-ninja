@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailTransViewController : UIViewController
+@class Trans, EditTransViewController, TransViewController;
+
+@interface DetailTransViewController : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate,  UITabBarControllerDelegate  > {
+	
+	
+	IBOutlet UITableView *tableView;
+	Trans *transObj;
+	NSIndexPath *selectedIndexPath;
+	EditTransViewController *evController;
+	TransViewController *rootController;
+	
+}
+
+@property (nonatomic, retain) Trans *transObj;
+
 
 @end
+

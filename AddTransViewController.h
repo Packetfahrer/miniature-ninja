@@ -8,6 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddTransViewController : UIViewController
+
+
+@class Trans;
+@class DatePickerViewController;
+@class DetailContactViewController; 
+
+
+@interface AddTransViewController : UIViewController <UITextFieldDelegate> {
+	
+	IBOutlet UITextField *txtTransactionDescription;
+    IBOutlet UILabel *lblDOE;
+	IBOutlet UILabel *lblName;
+
+	DatePickerViewController *dvController;    
+    DetailContactViewController *dcController;
+	UINavigationController *addNavigationController;
+    
+    
+}
+@property (nonatomic, retain) IBOutlet UINavigationBar *navigationBar;
+
+- (IBAction) editDOE: (id) sender;
+- (IBAction) nameClicked: (id) sender;
 
 @end

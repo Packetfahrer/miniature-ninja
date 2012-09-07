@@ -15,27 +15,17 @@
 @class DetailDOBViewController;
 
 
-@interface AddViewController : UIViewController <UIImagePickerControllerDelegate> {
-	IBOutlet UIImageView *imgView;
+@interface AddViewController : UIViewController <UITextFieldDelegate> {
 	
 	IBOutlet UITextField *txtContactName;
-	IBOutlet UITextField *txtWeight;
     IBOutlet UILabel *lblDOB;
-	IBOutlet UILabel *lblHeight;
 	IBOutlet UISegmentedControl *txtGender;
-	IBOutlet UISegmentedControl *txtActiveind;
-	IBOutlet UITextField *txtTwitterID;
-	DetailHeightViewController *dvController;
 	DetailDOBViewController *dbController;
-    
-    UIPopoverController *popover;
-    UIImagePickerController *imagePickerView;	
+
 
 
 }
-- (IBAction) editHeight: (id) sender;
 - (IBAction) editDOB: (id) sender;
-- (IBAction) editImage: (id) sender;
 
 
 @end

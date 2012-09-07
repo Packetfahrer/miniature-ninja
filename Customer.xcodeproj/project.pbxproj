@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F89C953E15F5BD3E00ED799F /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F89C953D15F5BD3E00ED799F /* AddViewController.xib */; };
 		F8BB0AF915F4FD3900282068 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BB0AF815F4FD3900282068 /* UIKit.framework */; };
 		F8BB0AFB15F4FD3900282068 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BB0AFA15F4FD3900282068 /* Foundation.framework */; };
 		F8BB0AFD15F4FD3900282068 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BB0AFC15F4FD3900282068 /* CoreGraphics.framework */; };
@@ -21,29 +22,111 @@
 		F8BB0B1715F4FD3900282068 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8BB0B1615F4FD3900282068 /* second@2x.png */; };
 		F8BB0B1A15F4FD3900282068 /* CustomerFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8BB0B1815F4FD3900282068 /* CustomerFirstViewController.xib */; };
 		F8BB0B1D15F4FD3900282068 /* CustomerSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8BB0B1B15F4FD3900282068 /* CustomerSecondViewController.xib */; };
+		F8DB9D3215F54BDB00F4AC4F /* customer.db in Resources */ = {isa = PBXBuildFile; fileRef = F8DB9D3115F54BDB00F4AC4F /* customer.db */; };
+		F8DB9D3615F54C0200F4AC4F /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DB9D3515F54C0200F4AC4F /* Contact.m */; };
+		F8DB9D3D15F54DD000F4AC4F /* Trans.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DB9D3C15F54DD000F4AC4F /* Trans.m */; };
+		F8DB9D3F15F54FE300F4AC4F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DB9D3E15F54FE300F4AC4F /* libsqlite3.0.dylib */; };
+		F8DB9D4315F556E100F4AC4F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DB9D4115F556E100F4AC4F /* RootViewController.m */; };
+		F8DB9D4415F556E100F4AC4F /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DB9D4215F556E100F4AC4F /* RootViewController.xib */; };
+		F8DB9D4B15F5576300F4AC4F /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DB9D4515F5576200F4AC4F /* DetailView.xib */; };
+		F8DB9D4C15F5576300F4AC4F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DB9D4715F5576200F4AC4F /* DetailViewController.m */; };
+		F8DB9D4D15F5576300F4AC4F /* EditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DB9D4815F5576200F4AC4F /* EditView.xib */; };
+		F8DB9D4E15F5576300F4AC4F /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DB9D4A15F5576200F4AC4F /* EditViewController.m */; };
+		F8DB9D5315F5579400F4AC4F /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DB9D5115F5579400F4AC4F /* AddViewController.m */; };
+		F8DB9D5715F5585F00F4AC4F /* DetailDOBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DB9D5415F5585F00F4AC4F /* DetailDOBView.xib */; };
+		F8DB9D5815F5585F00F4AC4F /* DetailDOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DB9D5615F5585F00F4AC4F /* DetailDOBViewController.m */; };
+		F8DB9D6315F5605100F4AC4F /* 17-bar-chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DB9D6115F5605100F4AC4F /* 17-bar-chart@2x.png */; };
+		F8DB9D6415F5605100F4AC4F /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DB9D6215F5605100F4AC4F /* 53-house.png */; };
+		F8DD2BA315F716130004A4FD /* KBCAppStoreLogo57.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DD2BA015F716130004A4FD /* KBCAppStoreLogo57.png */; };
+		F8DD2BA415F716130004A4FD /* KBCAppStoreLogo114.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DD2BA115F716130004A4FD /* KBCAppStoreLogo114.png */; };
+		F8DD2BA515F716130004A4FD /* KBCAppStoreLogo180.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DD2BA215F716130004A4FD /* KBCAppStoreLogo180.png */; };
+		F8DD2BA915F716DA0004A4FD /* KBCAppStoreLogo320by480.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DD2BA715F716DA0004A4FD /* KBCAppStoreLogo320by480.png */; };
+		F8DD2BAA15F716DA0004A4FD /* KBCAppStoreLogo640by960.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DD2BA815F716DA0004A4FD /* KBCAppStoreLogo640by960.png */; };
+		F8DD2BAC15F716DE0004A4FD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DD2BAB15F716DE0004A4FD /* Default.png */; };
+		F8DD2BAE15F716E30004A4FD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DD2BAD15F716E30004A4FD /* Default@2x.png */; };
+		F8E119AC15F59B9500D77C06 /* TranViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E119AA15F59B9500D77C06 /* TranViewController.m */; };
+		F8E119AD15F59B9500D77C06 /* TranViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E119AB15F59B9500D77C06 /* TranViewController.xib */; };
+		F8E119B215F5A20400D77C06 /* DetailTransViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E119B015F5A20400D77C06 /* DetailTransViewController.m */; };
+		F8E119B315F5A20400D77C06 /* DetailTransViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E119B115F5A20400D77C06 /* DetailTransViewController.xib */; };
+		F8E119B715F5A26C00D77C06 /* EditTransViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E119B515F5A26C00D77C06 /* EditTransViewController.m */; };
+		F8E119B815F5A26C00D77C06 /* EditTransViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E119B615F5A26C00D77C06 /* EditTransViewController.xib */; };
+		F8E119BC15F5A71000D77C06 /* AddTransViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E119BA15F5A70F00D77C06 /* AddTransViewController.m */; };
+		F8E119BD15F5A71000D77C06 /* AddTransViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E119BB15F5A70F00D77C06 /* AddTransViewController.xib */; };
+		F8E119C115F5A77F00D77C06 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E119BF15F5A77F00D77C06 /* DatePickerViewController.m */; };
+		F8E119C215F5A77F00D77C06 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E119C015F5A77F00D77C06 /* DatePickerViewController.xib */; };
+		F8E119CA15F5AD9C00D77C06 /* DetailContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E119C815F5AD9B00D77C06 /* DetailContactViewController.m */; };
+		F8E119CB15F5AD9C00D77C06 /* DetailContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E119C915F5AD9B00D77C06 /* DetailContactViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F89C953D15F5BD3E00ED799F /* AddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
 		F8BB0AF415F4FD3900282068 /* Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BB0AF815F4FD3900282068 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8BB0AFA15F4FD3900282068 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F8BB0AFC15F4FD3900282068 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F8BB0B0015F4FD3900282068 /* Customer-Info.plist */ = {isa = PBXFileReference; path = "Customer-Info.plist"; sourceTree = "<group>"; };
+		F8BB0B0015F4FD3900282068 /* Customer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Customer-Info.plist"; sourceTree = "<group>"; };
 		F8BB0B0215F4FD3900282068 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F8BB0B0415F4FD3900282068 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F8BB0B0615F4FD3900282068 /* Customer-Prefix.pch */ = {isa = PBXFileReference; path = "Customer-Prefix.pch"; sourceTree = "<group>"; };
-		F8BB0B0715F4FD3900282068 /* CustomerAppDelegate.h */ = {isa = PBXFileReference; path = CustomerAppDelegate.h; sourceTree = "<group>"; };
+		F8BB0B0615F4FD3900282068 /* Customer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Customer-Prefix.pch"; sourceTree = "<group>"; };
+		F8BB0B0715F4FD3900282068 /* CustomerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerAppDelegate.h; sourceTree = "<group>"; };
 		F8BB0B0815F4FD3900282068 /* CustomerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerAppDelegate.m; sourceTree = "<group>"; };
-		F8BB0B0A15F4FD3900282068 /* CustomerFirstViewController.h */ = {isa = PBXFileReference; path = CustomerFirstViewController.h; sourceTree = "<group>"; };
+		F8BB0B0A15F4FD3900282068 /* CustomerFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerFirstViewController.h; sourceTree = "<group>"; };
 		F8BB0B0B15F4FD3900282068 /* CustomerFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerFirstViewController.m; sourceTree = "<group>"; };
 		F8BB0B0D15F4FD3900282068 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		F8BB0B0F15F4FD3900282068 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		F8BB0B1115F4FD3900282068 /* CustomerSecondViewController.h */ = {isa = PBXFileReference; path = CustomerSecondViewController.h; sourceTree = "<group>"; };
+		F8BB0B1115F4FD3900282068 /* CustomerSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerSecondViewController.h; sourceTree = "<group>"; };
 		F8BB0B1215F4FD3900282068 /* CustomerSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerSecondViewController.m; sourceTree = "<group>"; };
 		F8BB0B1415F4FD3900282068 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		F8BB0B1615F4FD3900282068 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		F8BB0B1915F4FD3900282068 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CustomerFirstViewController.xib; sourceTree = "<group>"; };
 		F8BB0B1C15F4FD3900282068 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CustomerSecondViewController.xib; sourceTree = "<group>"; };
+		F8DB9D3115F54BDB00F4AC4F /* customer.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = customer.db; sourceTree = "<group>"; };
+		F8DB9D3415F54C0200F4AC4F /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		F8DB9D3515F54C0200F4AC4F /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		F8DB9D3B15F54DD000F4AC4F /* Trans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Trans.h; path = Customer/Trans.h; sourceTree = "<group>"; };
+		F8DB9D3C15F54DD000F4AC4F /* Trans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Trans.m; path = Customer/Trans.m; sourceTree = "<group>"; };
+		F8DB9D3E15F54FE300F4AC4F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		F8DB9D4015F556E100F4AC4F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F8DB9D4115F556E100F4AC4F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		F8DB9D4215F556E100F4AC4F /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		F8DB9D4515F5576200F4AC4F /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		F8DB9D4615F5576200F4AC4F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		F8DB9D4715F5576200F4AC4F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F8DB9D4815F5576200F4AC4F /* EditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditView.xib; sourceTree = "<group>"; };
+		F8DB9D4915F5576200F4AC4F /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		F8DB9D4A15F5576200F4AC4F /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		F8DB9D5015F5579400F4AC4F /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		F8DB9D5115F5579400F4AC4F /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		F8DB9D5415F5585F00F4AC4F /* DetailDOBView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailDOBView.xib; sourceTree = "<group>"; };
+		F8DB9D5515F5585F00F4AC4F /* DetailDOBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailDOBViewController.h; sourceTree = "<group>"; };
+		F8DB9D5615F5585F00F4AC4F /* DetailDOBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailDOBViewController.m; sourceTree = "<group>"; };
+		F8DB9D6115F5605100F4AC4F /* 17-bar-chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "17-bar-chart@2x.png"; sourceTree = "<group>"; };
+		F8DB9D6215F5605100F4AC4F /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
+		F8DD2BA015F716130004A4FD /* KBCAppStoreLogo57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KBCAppStoreLogo57.png; sourceTree = "<group>"; };
+		F8DD2BA115F716130004A4FD /* KBCAppStoreLogo114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KBCAppStoreLogo114.png; sourceTree = "<group>"; };
+		F8DD2BA215F716130004A4FD /* KBCAppStoreLogo180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KBCAppStoreLogo180.png; sourceTree = "<group>"; };
+		F8DD2BA715F716DA0004A4FD /* KBCAppStoreLogo320by480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KBCAppStoreLogo320by480.png; sourceTree = "<group>"; };
+		F8DD2BA815F716DA0004A4FD /* KBCAppStoreLogo640by960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KBCAppStoreLogo640by960.png; sourceTree = "<group>"; };
+		F8DD2BAB15F716DE0004A4FD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F8DD2BAD15F716E30004A4FD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F8E119A915F59B9500D77C06 /* TranViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranViewController.h; sourceTree = "<group>"; };
+		F8E119AA15F59B9500D77C06 /* TranViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranViewController.m; sourceTree = "<group>"; };
+		F8E119AB15F59B9500D77C06 /* TranViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TranViewController.xib; sourceTree = "<group>"; };
+		F8E119AF15F5A20400D77C06 /* DetailTransViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTransViewController.h; sourceTree = "<group>"; };
+		F8E119B015F5A20400D77C06 /* DetailTransViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTransViewController.m; sourceTree = "<group>"; };
+		F8E119B115F5A20400D77C06 /* DetailTransViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTransViewController.xib; sourceTree = "<group>"; };
+		F8E119B415F5A26C00D77C06 /* EditTransViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTransViewController.h; sourceTree = "<group>"; };
+		F8E119B515F5A26C00D77C06 /* EditTransViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTransViewController.m; sourceTree = "<group>"; };
+		F8E119B615F5A26C00D77C06 /* EditTransViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTransViewController.xib; sourceTree = "<group>"; };
+		F8E119B915F5A70F00D77C06 /* AddTransViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTransViewController.h; sourceTree = "<group>"; };
+		F8E119BA15F5A70F00D77C06 /* AddTransViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTransViewController.m; sourceTree = "<group>"; };
+		F8E119BB15F5A70F00D77C06 /* AddTransViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTransViewController.xib; sourceTree = "<group>"; };
+		F8E119BE15F5A77F00D77C06 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
+		F8E119BF15F5A77F00D77C06 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
+		F8E119C015F5A77F00D77C06 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
+		F8E119C715F5AD9B00D77C06 /* DetailContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailContactViewController.h; sourceTree = "<group>"; };
+		F8E119C815F5AD9B00D77C06 /* DetailContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailContactViewController.m; sourceTree = "<group>"; };
+		F8E119C915F5AD9B00D77C06 /* DetailContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailContactViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8DB9D3F15F54FE300F4AC4F /* libsqlite3.0.dylib in Frameworks */,
 				F8BB0AF915F4FD3900282068 /* UIKit.framework in Frameworks */,
 				F8BB0AFB15F4FD3900282068 /* Foundation.framework in Frameworks */,
 				F8BB0AFD15F4FD3900282068 /* CoreGraphics.framework in Frameworks */,
@@ -63,6 +147,11 @@
 		F8BB0AE915F4FD3900282068 = {
 			isa = PBXGroup;
 			children = (
+				F8DD2BAD15F716E30004A4FD /* Default@2x.png */,
+				F8DD2BAB15F716DE0004A4FD /* Default.png */,
+				F8DB9D3E15F54FE300F4AC4F /* libsqlite3.0.dylib */,
+				F8BB0B2815F4FEF500282068 /* Classes */,
+				F8BB0B2715F4FEEA00282068 /* Resources */,
 				F8BB0AFE15F4FD3900282068 /* Customer */,
 				F8BB0AF715F4FD3900282068 /* Frameworks */,
 				F8BB0AF515F4FD3900282068 /* Products */,
@@ -116,6 +205,65 @@
 				F8BB0B0615F4FD3900282068 /* Customer-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8BB0B2715F4FEEA00282068 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F8DD2BA715F716DA0004A4FD /* KBCAppStoreLogo320by480.png */,
+				F8DD2BA815F716DA0004A4FD /* KBCAppStoreLogo640by960.png */,
+				F8DD2BA215F716130004A4FD /* KBCAppStoreLogo180.png */,
+				F8DD2BA015F716130004A4FD /* KBCAppStoreLogo57.png */,
+				F8DD2BA115F716130004A4FD /* KBCAppStoreLogo114.png */,
+				F8DB9D6115F5605100F4AC4F /* 17-bar-chart@2x.png */,
+				F8DB9D6215F5605100F4AC4F /* 53-house.png */,
+				F8DB9D3115F54BDB00F4AC4F /* customer.db */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F8BB0B2815F4FEF500282068 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8E119B915F5A70F00D77C06 /* AddTransViewController.h */,
+				F8E119BA15F5A70F00D77C06 /* AddTransViewController.m */,
+				F8E119BB15F5A70F00D77C06 /* AddTransViewController.xib */,
+				F8DB9D5015F5579400F4AC4F /* AddViewController.h */,
+				F8DB9D5115F5579400F4AC4F /* AddViewController.m */,
+				F89C953D15F5BD3E00ED799F /* AddViewController.xib */,
+				F8DB9D3415F54C0200F4AC4F /* Contact.h */,
+				F8DB9D3515F54C0200F4AC4F /* Contact.m */,
+				F8E119BE15F5A77F00D77C06 /* DatePickerViewController.h */,
+				F8E119BF15F5A77F00D77C06 /* DatePickerViewController.m */,
+				F8E119C015F5A77F00D77C06 /* DatePickerViewController.xib */,
+				F8E119C715F5AD9B00D77C06 /* DetailContactViewController.h */,
+				F8E119C815F5AD9B00D77C06 /* DetailContactViewController.m */,
+				F8E119C915F5AD9B00D77C06 /* DetailContactViewController.xib */,
+				F8DB9D5415F5585F00F4AC4F /* DetailDOBView.xib */,
+				F8DB9D5515F5585F00F4AC4F /* DetailDOBViewController.h */,
+				F8DB9D5615F5585F00F4AC4F /* DetailDOBViewController.m */,
+				F8E119AF15F5A20400D77C06 /* DetailTransViewController.h */,
+				F8E119B015F5A20400D77C06 /* DetailTransViewController.m */,
+				F8E119B115F5A20400D77C06 /* DetailTransViewController.xib */,
+				F8DB9D4515F5576200F4AC4F /* DetailView.xib */,
+				F8DB9D4615F5576200F4AC4F /* DetailViewController.h */,
+				F8DB9D4715F5576200F4AC4F /* DetailViewController.m */,
+				F8E119B415F5A26C00D77C06 /* EditTransViewController.h */,
+				F8E119B515F5A26C00D77C06 /* EditTransViewController.m */,
+				F8E119B615F5A26C00D77C06 /* EditTransViewController.xib */,
+				F8DB9D4815F5576200F4AC4F /* EditView.xib */,
+				F8DB9D4915F5576200F4AC4F /* EditViewController.h */,
+				F8DB9D4A15F5576200F4AC4F /* EditViewController.m */,
+				F8DB9D4015F556E100F4AC4F /* RootViewController.h */,
+				F8DB9D4115F556E100F4AC4F /* RootViewController.m */,
+				F8DB9D4215F556E100F4AC4F /* RootViewController.xib */,
+				F8DB9D3B15F54DD000F4AC4F /* Trans.h */,
+				F8DB9D3C15F54DD000F4AC4F /* Trans.m */,
+				F8E119A915F59B9500D77C06 /* TranViewController.h */,
+				F8E119AA15F59B9500D77C06 /* TranViewController.m */,
+				F8E119AB15F59B9500D77C06 /* TranViewController.xib */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +324,27 @@
 				F8BB0B1715F4FD3900282068 /* second@2x.png in Resources */,
 				F8BB0B1A15F4FD3900282068 /* CustomerFirstViewController.xib in Resources */,
 				F8BB0B1D15F4FD3900282068 /* CustomerSecondViewController.xib in Resources */,
+				F8DB9D3215F54BDB00F4AC4F /* customer.db in Resources */,
+				F8DB9D4415F556E100F4AC4F /* RootViewController.xib in Resources */,
+				F8DB9D4B15F5576300F4AC4F /* DetailView.xib in Resources */,
+				F8DB9D4D15F5576300F4AC4F /* EditView.xib in Resources */,
+				F8DB9D5715F5585F00F4AC4F /* DetailDOBView.xib in Resources */,
+				F8DB9D6315F5605100F4AC4F /* 17-bar-chart@2x.png in Resources */,
+				F8DB9D6415F5605100F4AC4F /* 53-house.png in Resources */,
+				F8E119AD15F59B9500D77C06 /* TranViewController.xib in Resources */,
+				F8E119B315F5A20400D77C06 /* DetailTransViewController.xib in Resources */,
+				F8E119B815F5A26C00D77C06 /* EditTransViewController.xib in Resources */,
+				F8E119BD15F5A71000D77C06 /* AddTransViewController.xib in Resources */,
+				F8E119C215F5A77F00D77C06 /* DatePickerViewController.xib in Resources */,
+				F8E119CB15F5AD9C00D77C06 /* DetailContactViewController.xib in Resources */,
+				F89C953E15F5BD3E00ED799F /* AddViewController.xib in Resources */,
+				F8DD2BA315F716130004A4FD /* KBCAppStoreLogo57.png in Resources */,
+				F8DD2BA415F716130004A4FD /* KBCAppStoreLogo114.png in Resources */,
+				F8DD2BA515F716130004A4FD /* KBCAppStoreLogo180.png in Resources */,
+				F8DD2BA915F716DA0004A4FD /* KBCAppStoreLogo320by480.png in Resources */,
+				F8DD2BAA15F716DA0004A4FD /* KBCAppStoreLogo640by960.png in Resources */,
+				F8DD2BAC15F716DE0004A4FD /* Default.png in Resources */,
+				F8DD2BAE15F716E30004A4FD /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +359,19 @@
 				F8BB0B0915F4FD3900282068 /* CustomerAppDelegate.m in Sources */,
 				F8BB0B0C15F4FD3900282068 /* CustomerFirstViewController.m in Sources */,
 				F8BB0B1315F4FD3900282068 /* CustomerSecondViewController.m in Sources */,
+				F8DB9D3615F54C0200F4AC4F /* Contact.m in Sources */,
+				F8DB9D3D15F54DD000F4AC4F /* Trans.m in Sources */,
+				F8DB9D4315F556E100F4AC4F /* RootViewController.m in Sources */,
+				F8DB9D4C15F5576300F4AC4F /* DetailViewController.m in Sources */,
+				F8DB9D4E15F5576300F4AC4F /* EditViewController.m in Sources */,
+				F8DB9D5315F5579400F4AC4F /* AddViewController.m in Sources */,
+				F8DB9D5815F5585F00F4AC4F /* DetailDOBViewController.m in Sources */,
+				F8E119AC15F59B9500D77C06 /* TranViewController.m in Sources */,
+				F8E119B215F5A20400D77C06 /* DetailTransViewController.m in Sources */,
+				F8E119B715F5A26C00D77C06 /* EditTransViewController.m in Sources */,
+				F8E119BC15F5A71000D77C06 /* AddTransViewController.m in Sources */,
+				F8E119C115F5A77F00D77C06 /* DatePickerViewController.m in Sources */,
+				F8E119CA15F5AD9C00D77C06 /* DetailContactViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +425,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -261,6 +447,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -307,6 +497,7 @@
 				F8BB0B2215F4FD3900282068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
