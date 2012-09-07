@@ -7,7 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+@class RootViewController;
+@class TranViewController;
 
-@interface CustomerFirstViewController : UIViewController
+
+@interface CustomerFirstViewController : UIViewController{
+	CustomerAppDelegate *appDelegate;
+    
+    RootViewController *rtController;
+    TranViewController *tvController;
+    
+    UINavigationController *addNavigationController;
+    
+}
+
+- (IBAction) viewContacts: (id) sender;
+- (IBAction) viewTransactions: (id) sender;
+
 
 @end

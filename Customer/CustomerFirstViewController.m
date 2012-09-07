@@ -7,6 +7,8 @@
 //
 
 #import "CustomerFirstViewController.h"
+#import "RootViewController.h"
+#import "TranViewController.h"
 
 @implementation CustomerFirstViewController
 
@@ -14,12 +16,12 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"First", @"First");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.title = NSLocalizedString(@"Home", @"Home");
+        self.tabBarItem.image = [UIImage imageNamed:@"53-house"];
     }
     return self;
 }
-							
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -32,6 +34,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	appDelegate = (CustomerAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
 }
 
 - (void)viewDidUnload
@@ -65,6 +69,36 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+- (void) viewContacts:(id)sender {
+    [appDelegate saveContact];
+    if(rtController == nil)
+        rtController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+    
+    if(addNavigationController == nil){
+        addNavigationController = [[UINavigationController alloc] initWithRootViewController:rtController];
+    }else {
+        [addNavigationController release];
+        addNavigationController = [[UINavigationController alloc] initWithRootViewController:rtController];
+        
+    }
+    [self presentModalViewController:addNavigationController animated:YES]; 
+    
+}
+- (void) viewTransactions:(id)sender {
+    [appDelegate saveTrans];
+    if(tvController == nil)
+        tvController = [[TranViewController alloc] initWithNibName:@"TranViewController" bundle:nil];
+    
+    if(addNavigationController == nil){
+        addNavigationController = [[UINavigationController alloc] initWithRootViewController:tvController];
+    }else {
+        [addNavigationController release];
+        addNavigationController = [[UINavigationController alloc] initWithRootViewController:tvController];
+        
+    }
+    [self presentModalViewController:addNavigationController animated:YES]; 
+    
 }
 
 @end
