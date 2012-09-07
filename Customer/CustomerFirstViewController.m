@@ -21,7 +21,7 @@
     }
     return self;
 }
-
+							
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -35,7 +35,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	appDelegate = (CustomerAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
+
 }
 
 - (void)viewDidUnload
@@ -83,7 +83,7 @@
         
     }
     [self presentModalViewController:addNavigationController animated:YES]; 
-    
+
 }
 - (void) viewTransactions:(id)sender {
     [appDelegate saveTrans];
